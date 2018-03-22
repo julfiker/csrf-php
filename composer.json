@@ -1,0 +1,23 @@
+{
+    "name": "julfiker/csrf-php",
+    "description": "PHP library for generating csrf token and checking on post action",
+    "type": "service",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julfiker",
+            "email": "mail.julfiker@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/http-foundation": "v3.4.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Julfiker\\Service\\": "src/manager",
+            "Csrf\\Exception\\": "src/exceptions"
+        }
+    }
+}
