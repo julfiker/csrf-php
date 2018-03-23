@@ -12,7 +12,7 @@ Just run composer require command with package name. This assumes you have compo
 ## How to use in plain php application
 ```php
 require_once __DIR__."/vendor/autoload.php";
-use Julfiker\Manager\CsrfManager as Csrf;
+use Julfiker\Service\CsrfManager as Csrf;
 $csrf = new Csrf();
 $csrf->setExpiredAt(10); //10 minutes; But default it has 30 minutes
 $token = $csrf->getCSRFToken();
