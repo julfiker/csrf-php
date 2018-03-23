@@ -41,10 +41,10 @@ echo "Token was valid and saving the information";
 ```
 
 ## How to use in zendframework 1.*
-*In a multiple way you can integrate the csrf token validation for crontroller action*
-Option 1: You can use customer action helper to check csrf token from controller action specifically
-Option 2: Plugin to check csrf on each post action method in general.
-*Example Action helper*
+### In a multiple way you can integrate the csrf token validation for crontroller action  
+Option 1: You can use customer action helper to check csrf token from controller action specifically  
+Option 2: Plugin to check csrf on each post action method in general.  
+*Example Action helper*  
 ```php
 /**
  * Action helper checking csrf from action, it can be used in controller action like
@@ -139,8 +139,8 @@ class ProjectNameSpace_Zend_Controller_Action_Helper_Csrf extends  Zend_Controll
     }
 }
 ```
-*How to use action helper in controller*
-Controller action example to use action helper
+### How to use action helper in controller  
+Controller action example to use action helper  
 ```php
 //Checking csrf protection
 $this->_helper->csrf->validateToken()
@@ -151,7 +151,7 @@ $csrf = $this->_helper->csrf->validateToken();
 if ($csrf->isInvalidToken())
 $csrf->gotoUrl(‘url_string’);
 ```
-However, without action helper you can use directly service to check csrf token like following
+However, without action helper you can use directly service to check csrf token like following  
 ```php
 $csrf = new \Julfiker\Service\CsrfManager();
 if (!$csrf->isValidToken()) {
@@ -159,9 +159,9 @@ if (!$csrf->isValidToken()) {
     exit;
 }
 ```
-Another way to check token in general for all action.
-You need to create a controller plugin 
-*Example plugin code*
+Another way to check token in general for all action.  
+You need to create a controller plugin   
+#### Example plugin code*
 ```php
 /**
  * Class ProjectNameSpace_Zend_Controller_Plugin_Csrf
@@ -189,12 +189,12 @@ class ProjectNameSpace_Zend_Controller_Plugin_Csrf extends Zend_Controller_Plugi
     }
 }
 ```
-Note: You have register plugin into application.ini. Or through front controller. 
+Note: You have register plugin into application.ini. Or through front controller.   
 
 
-*To render html token with hidden input element on each form*
-I recommend to use view helper to do that.
-*Example view helper*
+### To render html token with hidden input element on each form
+I recommend to use view helper to do that.  
+#### Example view helper
 ```php
 /**
  * Csrf token view helper used to render token
@@ -242,13 +242,13 @@ class ProjectNameSpace_Zend_View_Helper_CsrfToken extends Zend_View_Helper_Abstr
     }
 }
 ```
-*How to render token in html view by example view helper code*
+### How to render token in html view by example view helper code   
 
-If you used raw html form, then you can use following code to render token hidden filed
+If you used raw html form, then you can use following code to render token hidden filed  
 ```html
 <?php echo $this->csrfToken()->render(); ?>
-```
-If you used zend form to render form, then you can use following example code to add token into the form
+```  
+If you used zend form to render form, then you can use following example code to add token into the form  
 ```php
 $csrfToken = $this->getView()->csrfToken()->getElement(); 
 $this->addElement($csrfToken);
