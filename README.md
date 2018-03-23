@@ -1,6 +1,8 @@
 # csrf-php
-Generating csrf token and checking in POST|PULL|DELETE method action. Its independent service for php application. You can integrated it php any kind application.
-
+Generating csrf token and checking in POST|PULL|DELETE method action. Its independent service for php application. You can integrated it php any kind application.  
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/julfiker/csrf-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/julfiker/csrf-php/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/julfiker/csrf-php/badges/build.png?b=master)](https://scrutinizer-ci.com/g/julfiker/csrf-php/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/julfiker/csrf-php/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 ## Installation
 ``` sh
 composer require julfiker/csrf-php
